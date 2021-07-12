@@ -1,32 +1,52 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <main id="app">
+    <Glass />
+    <BGCircle :radius="20" :top="60" :left="-5" />
+    <BGCircle :radius="15" :top="40" :left="75" />
+  </main>
 </template>
 
+<script>
+import Glass from '@/components/Glass';
+import BGCircle from '@/components/BGCircle';
+export default {
+  components: {
+    Glass,
+    BGCircle,
+  },
+};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+$primary: #fd7491;
+$secondary: #b368e3;
+$third: #6c209c;
+
+html {
+  font-size: 62.5%;
 }
 
-#nav {
-  padding: 30px;
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+main {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(to right top, $primary, $secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
