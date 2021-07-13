@@ -3,7 +3,12 @@
     <h2>Projects</h2>
 
     <div class="project-container">
-      <div class="project" v-for="project in projects" :key="project.name">
+      <div
+        class="project"
+        v-for="(project, index) in projects"
+        :key="project.name"
+        @click="setProject(index)"
+      >
         <div class="project__image">
           <img :src="`../assets/${project.image}`" :alt="project.alt" />
         </div>
@@ -25,8 +30,13 @@ export default {
         {
           image: 'mvc.png',
           alt: 'MVC image',
-          name: 'Media Voices For Children Streaming Service',
+          name: 'Media Voices Children Streaming Service',
           short: 'Custom made streaming platform using Paypal API',
+          githubLink: 'www.google.com',
+          hostedLink: 'www.google.com',
+          problem: `Here goes a long description about the problem. At first they had this problem. Here is the problem. There is a problem. We need to fix this problem.`,
+          result: `Here is the result. Here it goes. I am giving the description of the result. The result is super good and you should give me a job. Def a good result'`,
+          technical: `Here is the technical description. It is very technical and shows that I am super smart. definitely should hire me off this.`,
         },
         {
           image: 'rec.png',
@@ -48,6 +58,12 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    setProject(index) {
+      const setProject = this.projects[index];
+      this.$emit('passUpProject', setProject);
+    },
   },
 };
 </script>

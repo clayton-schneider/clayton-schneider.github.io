@@ -1,24 +1,39 @@
 <template>
   <div class="glass">
-    <HomeDash @linkChange="handleLinkChange" />
-    <HomeView :link="link" />
+    <transition name="fade" mode="out-in">
+      <div class="flex" v-if="!project.name" key="home">
+        <HomeDash @linkChange="handleLinkChange" />
+        <HomeView :link="link" @setProjectView="setProject" />
+      </div>
+      <div v-else key="project">
+        <Project :project="project" @close="close" />
+      </div>
+    </transition>
   </div>
 </template>
 
 <script>
 import HomeDash from '@/components/HomeDash';
 import HomeView from '@/components/HomeView';
+import Project from '@/components/Project';
 export default {
   name: 'Glass',
-  components: { HomeDash, HomeView },
+  components: { HomeDash, HomeView, Project },
   data() {
     return {
       link: 'projects',
+      project: {},
     };
   },
   methods: {
     handleLinkChange(mode) {
       this.link = mode;
+    },
+    setProject(project) {
+      this.project = project;
+    },
+    close() {
+      this.project = {};
     },
   },
 };
@@ -28,9 +43,8 @@ export default {
 .glass {
   z-index: 3;
   background: white;
-  min-height: 80vh;
-  max-height: 80vh;
-  min-width: 75%;
+  height: 80vh;
+  width: 75%;
   border-radius: 3rem;
   background: linear-gradient(
     to bottom right,
@@ -39,6 +53,19 @@ export default {
   );
   backdrop-filter: blur(2rem);
 
-  display: flex;
+  .flex {
+    height: 100%;
+    display: flex;
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
