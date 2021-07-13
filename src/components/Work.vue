@@ -3,7 +3,12 @@
     <h2>Work</h2>
 
     <div class="work-container">
-      <div class="work" v-for="work in works" :key="work.name">
+      <div
+        class="work"
+        v-for="(work, index) in works"
+        :key="work.name"
+        @click="setWork(index)"
+      >
         <div class="work__image">
           <img :src="`../assets/${work.image}`" :alt="work.alt" />
         </div>
@@ -48,6 +53,12 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    setWork(index) {
+      const setWork = this.works[index];
+      this.$emit('passUpWork', setWork);
+    },
   },
 };
 </script>

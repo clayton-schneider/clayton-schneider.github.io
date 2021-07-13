@@ -1,7 +1,12 @@
 <template>
   <div class="home-view">
     <transition name="component-fade" mode="out-in">
-      <component :is="link" @passUpProject="emitSetProject"> </component>
+      <component
+        :is="link"
+        @passUpProject="emitSetProject"
+        @passUpWork="emitSetWork"
+      >
+      </component>
     </transition>
   </div>
 </template>
@@ -23,6 +28,9 @@ export default {
   methods: {
     emitSetProject(project) {
       this.$emit('setProjectView', project);
+    },
+    emitSetWork(work) {
+      this.$emit('setWork', work);
     },
   },
 };

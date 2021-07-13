@@ -1,12 +1,19 @@
 <template>
   <div class="glass">
     <transition name="fade" mode="out-in">
-      <div class="flex" v-if="!project.name" key="home">
+      <div class="flex" v-if="!project.name && !experience.name" key="home">
         <HomeDash @linkChange="handleLinkChange" />
-        <HomeView :link="link" @setProjectView="setProject" />
+        <HomeView
+          :link="link"
+          @setProjectView="setProject"
+          @setWork="setWork"
+        />
       </div>
-      <div v-else key="project">
+      <div v-else-if="project.name" key="project">
         <Project :project="project" @close="close" />
+      </div>
+      <div v-else-if="experience.name" key="experience">
+        <WorkExperience @close="close" />
       </div>
     </transition>
   </div>
@@ -16,13 +23,15 @@
 import HomeDash from '@/components/HomeDash';
 import HomeView from '@/components/HomeView';
 import Project from '@/components/Project';
+import WorkExperience from '@/components/WorkExperience';
 export default {
   name: 'Glass',
-  components: { HomeDash, HomeView, Project },
+  components: { HomeDash, HomeView, Project, WorkExperience },
   data() {
     return {
       link: 'projects',
       project: {},
+      experience: {},
     };
   },
   methods: {
@@ -33,7 +42,11 @@ export default {
       this.project = project;
     },
     close() {
+      this.experience = {};
       this.project = {};
+    },
+    setWork(work) {
+      this.experience = work;
     },
   },
 };
