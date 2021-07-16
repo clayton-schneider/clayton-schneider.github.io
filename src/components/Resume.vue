@@ -14,7 +14,7 @@ export default {
     document.body.appendChild(script);
     document.addEventListener('adobe_dc_view_sdk.ready', function() {
       var adobeDCView = new AdobeDC.View({
-        clientId: '846e76d33d0c4e4eba6ab862038be42a',
+        clientId: '236d5f6beca14873be82f7c736aaf7bc',
         divId: 'adobe-dc-view',
       });
       adobeDCView.previewFile(
