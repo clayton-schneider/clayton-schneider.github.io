@@ -13,7 +13,7 @@
         <Project :project="project" @close="close" />
       </div>
       <div v-else-if="experience.name" key="experience">
-        <WorkExperience @close="close" />
+        <WorkExperience @close="close" :experience="experience" />
       </div>
     </transition>
   </div>

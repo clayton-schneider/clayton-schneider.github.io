@@ -28,28 +28,29 @@ export default {
     return {
       works: [
         {
-          image: 'mvc.png',
+          image: 'pratt.png',
           alt: 'MVC image',
-          name: 'Media Voices For Children Streaming Service',
-          short: 'Custom made streaming platform using Paypal API',
+          name: 'Pratt & Whitney: Senior Design',
+          short: 'Led automation to process lab data',
+          summary:
+            'Pratt & Whitney has a lab that is focused on improving the thermal barrier coatings that go on their jet engines. Their lab had five sensors each collecting data once per second. After their tests were completed they would process all this data by hand in excel to be able to understand what happened in their tests. I created an electron app that allowed them to upload their data to be stored and processed automatically, all while following strict ITAR regulations.',
         },
         {
-          image: 'rec.png',
-          alt: 'rec image',
-          name: 'Recommendable',
-          short: 'Resume storage app, with Stripe and Oauth integrations',
-        },
-        {
-          image: 'cruise.png',
-          alt: 'cruise image',
-          name: 'Cruisers Motorsports',
-          short: 'JAMstack website to increase customer leads',
+          image: 'carling.png',
+          alt: 'Carling Tech image',
+          name: 'Carling Technologies: Process Improvement',
+          short: 'Led process improvement within headquarters',
+          summary:
+            'Carling Technologies is a manufacturer of electrical switches. I was tasked with the responsibility of improving different processes at their headquarters with automation. For example there was one process for handling returns from customers due to quality errors. Their previous process involved paperwork and manually contacting different employees around the organization to gather data. The new system that I developed was all electronic and automatically collected data, saving the company hundreds of hours a year.',
         },
         {
           image: 'simple.png',
-          alt: 'simple image',
-          name: 'Simply Sprout',
-          short: 'JAMstack website to increase customer leads',
+          alt: 'Simply Sprout image',
+          name: 'Simply Sprout: Owner & Developer',
+          short:
+            'Developer at company that creates websites for small businesses',
+          summary:
+            'Responsible for client relations and leading development for customer solutions. Typical tasks include meeting with clients to understand their needs, closing sales, and then developing a solution that solves their problems.',
         },
       ],
     };

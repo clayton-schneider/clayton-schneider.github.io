@@ -2,22 +2,13 @@
   <div class="experience">
     <div class="experience__top-bar">
       <h4 class="close" @click="emitClose">X</h4>
-      <h2>Work Title</h2>
+      <h2>{{ experience.name }}</h2>
     </div>
     <div class="details">
       <div>
-        <h2>The Role: Role Title</h2>
+        <h2>Summary</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti quia
-          harum consequatur sint accusantium incidunt ducimus, non ullam
-          inventore odio.
-        </p>
-      </div>
-      <div>
-        <h2>The Impact:</h2>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa magnam
-          eius rerum officia, at animi suscipit vero fugit sequi obcaecati?
+          {{ experience.summary }}
         </p>
       </div>
     </div>
@@ -27,6 +18,7 @@
 <script>
 export default {
   name: 'WorkExperience',
+  props: ['experience'],
   methods: {
     emitClose() {
       this.$emit('close');

@@ -27,8 +27,16 @@ export default {
           copy: 'clayton.schneider@uconn.edu',
         },
         { name: 'Phone', image: 'phone.png', copy: '203-491-8241' },
-        { name: 'LinkedIn', image: 'linkedin.png', copy: 'link' },
-        { name: 'GitHub', image: 'github.png', copy: 'link' },
+        {
+          name: 'LinkedIn',
+          image: 'linkedin.png',
+          copy: 'https://www.linkedin.com/in/clayton-schneider-0b1194171/',
+        },
+        {
+          name: 'GitHub',
+          image: 'github.png',
+          copy: 'https://github.com/clayton-schneider',
+        },
       ],
     };
   },

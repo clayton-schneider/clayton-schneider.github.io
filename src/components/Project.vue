@@ -4,10 +4,10 @@
       <h4 class="close" @click="emitClose">X</h4>
       <h2 class="detailed__name">{{ project.name }}</h2>
       <div class="detailed__links">
-        <a href="www.google.com" target="_blank" class="">
+        <a :href="project.hostedLink" target="_blank" class="">
           <img src="@/assets/open.png" alt="Open Link" />
         </a>
-        <a href="www.google.com" target="_blank">
+        <a :href="project.githubLink" target="_blank">
           <img src="@/assets/github-2.png" alt="Open GitHub" />
         </a>
       </div>

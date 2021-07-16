@@ -21,8 +21,7 @@ export default {
         {
           content: {
             location: {
-              url:
-                'https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf',
+              url: './assets/resume.pdf',
             },
           },
           metaData: { fileName: 'CMS Resume' },
