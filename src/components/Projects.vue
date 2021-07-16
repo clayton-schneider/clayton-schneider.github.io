@@ -67,7 +67,7 @@ export default {
           result:
             'Their new website provides business information and a path for the customer to reach out and get their questions answered about any upcoming projects they may have. The owner has told me how it has helped him with his business. He has spent less time answering repetitive questions and more time closing sales.',
           technical:
-            'The website is built using Jamstack methodologies. Under the hood it is powered by Gridsome, a static site generator. For scheduling purposes the sire utilizes Calendly.',
+            'The website is built using Jamstack methodologies. Under the hood it is powered by Gridsome, a static site generator. For scheduling purposes the site utilizes Calendly.',
         },
         {
           image: 'port.png',
