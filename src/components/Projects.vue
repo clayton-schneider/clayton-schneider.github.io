@@ -74,7 +74,8 @@ export default {
           alt: 'portfolio image',
           name: 'This Portfolio',
           short: 'Portfolio to display my past work',
-          githubLink: 'https://github.com/clayton-schneider/rec-frontend',
+          githubLink:
+            'https://github.com/clayton-schneider/clayton-schneider.github.io',
           hostedLink: 'https://clayton-schneider.github.io/',
           problem:
             'I would like to begin working in the web development industry. I have over two years of experience and a desire to pair my skills with a company that’s looking for a great web developer. Due to the competitive nature of the industry I need a way to stand out and highlight my skills so that I can separate myself from the rest.',
