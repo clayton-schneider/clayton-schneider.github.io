@@ -4,7 +4,7 @@ import { Image } from 'astro:assets'
 ---
 
 <CoreLayout>
-	<section class="my-20">
+	<section class="px-edge py-20">
 		<div class="mx-auto flex max-w-screen-xl flex-col justify-between lg:flex-row lg:space-x-5">
 			<div class="relative z-10 mx-auto max-w-xl text-center md:mt-10 lg:mx-0 lg:text-left">
 				<h1 class="text-5xl font-bold uppercase">Front-End Developer</h1>
@@ -24,10 +24,10 @@ import { Image } from 'astro:assets'
 			</div>
 
 			<div class="relative mx-auto mt-10 lg:mx-0 lg:mt-0">
-				<span class="absolute -bottom-4 -left-10 z-10 block h-20 w-20 rounded-full bg-slate-700"
+				<span class="absolute -bottom-4 -left-10 z-10 block h-20 w-20 rounded-full bg-yellow-400"
 				></span>
 				<span
-					class="absolute -bottom-10 -right-72 z-0 block h-[500px] w-[500px] rounded-full bg-yellow-400"
+					class="absolute -bottom-10 -right-72 -z-10 block h-[500px] w-[500px] rounded-full bg-slate-700"
 				></span>
 
 				<Image
@@ -38,6 +38,40 @@ import { Image } from 'astro:assets'
 					src={import('~/imgs/headshot-schneider.jpg')}
 					alt="clayton schneider"
 				/>
+			</div>
+		</div>
+	</section>
+
+	<section id="projects" class="px-edge py-10 lg:py-20">
+		<div class="mx-auto max-w-screen-xl">
+			<h2 class="text-center text-4xl font-bold">My Projects</h2>
+
+			<div
+				class="mt-20 flex flex-col items-center justify-between gap-10 lg:flex-row lg:items-start"
+			>
+				<div class="max-w-xl text-center lg:text-left">
+					<h3 class="text-3xl font-bold">I Cheat At Wordle</h3><p
+						class="mt-2 text-lg leading-relaxed"
+					>
+						This tool will filter through all the five letter words in the english language and show
+						you your remaining guesses so that you can win Wordle faster.
+					</p>
+					<div>
+						<a
+							target="_blank"
+							class="text-primary mt-2 inline-block rounded border border-yellow-400 bg-yellow-400 px-8 py-1 font-bold"
+							href="https://icheatatwordle.com"
+							>View App
+						</a>
+					</div>
+				</div>
+				<div>
+					<Image
+						height={500}
+						src={import('~/imgs/projects/icheatatwordle/icheatatwordle.png')}
+						alt="I Cheat At Wordle"
+					/>
+				</div>
 			</div>
 		</div>
 	</section>
