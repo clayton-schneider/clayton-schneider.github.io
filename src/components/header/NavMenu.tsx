@@ -53,9 +53,6 @@ const NavMenu = ({ links }: Props) => {
 						)
 					}
 				})}
-				<li className="bg-primary hover:border-primary hover:text-primary block w-full rounded border-2 border-transparent px-7 py-6 text-center leading-none text-white transition-all duration-300 hover:bg-transparent xl:inline xl:w-auto">
-					<a href="/request/">Request My Free Review</a>
-				</li>
 			</ul>
 			<Hamburger clicked={handleClick} isOpen={isOpen} />
 		</div>
