@@ -1,8 +1,43 @@
 ---
-import CoreLayout from "../layouts/CoreLayout.astro"
+import CoreLayout from '../layouts/CoreLayout.astro'
+import { Image } from 'astro:assets'
 ---
 
 <CoreLayout>
+	<section class="my-20">
+		<div class="mx-auto flex max-w-screen-2xl flex-col justify-between lg:flex-row lg:space-x-5">
+			<div class="relative z-10 mx-auto max-w-2xl text-center md:mt-10 lg:mx-0 lg:text-left">
+				<h6 class="text-5xl font-bold uppercase">Front-End Developer</h6>
+				<h2 class="mt-2 text-3xl">Headline</h2>
+				<p>
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam ratione deleniti
+					voluptatem consectetur pariatur mollitia adipisci excepturi suscipit? Optio, incidunt!
+				</p>
 
+				<a
+					class="border-primary text-primary mt-2 inline-block rounded-3xl border px-8 py-1 font-bold"
+					href="#projects"
+				>
+					View Projects
+				</a>
+			</div>
+
+			<div class="relative mx-auto mt-10 lg:mx-0 lg:mt-0">
+				<span class="absolute -bottom-4 -left-10 z-10 block h-20 w-20 rounded-full bg-slate-700"
+				></span>
+				<span
+					class="absolute -bottom-10 -right-72 z-0 block h-[500px] w-[500px] rounded-full bg-yellow-400"
+				></span>
+
+				<Image
+					class="relative rounded-3xl object-cover"
+					loading="eager"
+					width={600}
+					height={700}
+					src={import('~/imgs/headshot-schneider.jpg')}
+					alt="clayton schneider"
+				/>
+			</div>
+		</div>
+	</section>
 </CoreLayout>
-
