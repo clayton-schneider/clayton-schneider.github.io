@@ -1,0 +1,17 @@
+---
+import { Image } from 'astro:assets'
+import CoreLayout from 'src/layouts/CoreLayout.astro'
+---
+
+<CoreLayout>
+	<section class="my-10 px-edge lg:my-20">
+		<div class="mx-auto max-w-6xl">
+			<h1>I Cheat At Wordle</h1>
+			<Image
+				class="max-h-96 w-full object-cover"
+				src={import('~/imgs/projects/icheatatwordle/icheatatwordle.png')}
+				alt="i cheat at wordle"
+			/>
+		</div>
+	</section>
+</CoreLayout>
