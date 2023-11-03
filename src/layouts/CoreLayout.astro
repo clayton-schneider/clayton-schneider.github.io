@@ -1,5 +1,5 @@
 ---
-import Header from '~/components/header/Header.astro'
+import { ViewTransitions } from 'astro:transitions'
 import { GoogleFontsOptimizer } from 'astro-google-fonts-optimizer'
 ---
 
@@ -12,6 +12,7 @@ import { GoogleFontsOptimizer } from 'astro-google-fonts-optimizer'
 		<GoogleFontsOptimizer
 			url="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
 		/>
+		<ViewTransitions />
 	</head>
 	<body class="relative w-full overflow-x-hidden">
 		<slot />

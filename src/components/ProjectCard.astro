@@ -1,12 +1,13 @@
 ---
 import { Image } from 'astro:assets'
-const txt =
-	'This tool will filter through all the five letter words in the english language and show you your remaining guesses so that you can win Wordle faster.'
+const txt = ''
 ---
 
 <div class="flex flex-col items-center justify-between gap-10 lg:flex-row-reverse lg:items-start">
 	<div class="max-w-xl text-center lg:text-left">
-		<h3 class="text-3xl font-bold">I Cheat At Wordle</h3><p class="mt-2 text-lg leading-relaxed">
+		<h3 transition:name="project-name" class="text-3xl font-bold">I Cheat At Wordle</h3><p
+			class="mt-2 text-lg leading-relaxed"
+		>
 			Wordle companion app to make finding your next guess easier.
 		</p>
 		<div class="mt-2 flex space-x-2">
@@ -25,6 +26,7 @@ const txt =
 	</div>
 	<div>
 		<Image
+			transition:name="project-img"
 			height={500}
 			src={import('~/imgs/projects/icheatatwordle/i-cheat-at-wordle.png')}
 			alt="I Cheat At Wordle"
