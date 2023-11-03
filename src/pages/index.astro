@@ -5,10 +5,10 @@ import { Image } from 'astro:assets'
 
 <CoreLayout>
 	<section class="relative w-full overflow-x-hidden px-edge py-20">
-		<div class="mx-auto flex max-w-screen-xl flex-col justify-between lg:flex-row lg:space-x-5">
-			<div class="relative z-10 mx-auto max-w-xl text-center md:mt-10 lg:mx-0 lg:text-left">
-				<h1 class="text-5xl font-bold uppercase">Hi! I'm Clayton, a developer based in Boston.</h1>
-				<div class="mt-2 leading-relaxed">
+		<div class="mx-auto flex max-w-screen-xl flex-col justify-between lg:flex-row lg:space-x-10">
+			<div class="relative z-10 mx-auto max-w-2xl text-center md:mt-10 lg:mx-0 lg:text-left">
+				<h1 class="text-5xl font-bold">Hi! I'm Clayton, a developer based in Boston.</h1>
+				<div class="mt-5 space-y-2 leading-relaxed">
 					<p>
 						Quality-oriented Full Stack Developer with a wide range of technical skills, learns
 						quickly. Strong work ethic combined with an attractive mix of hands-on application
@@ -34,10 +34,9 @@ import { Image } from 'astro:assets'
 				></span>
 
 				<Image
-					class="relative rounded-3xl object-cover"
+					class="relative h-full rounded-3xl object-cover"
 					loading="eager"
 					width={600}
-					height={700}
 					src={import('~/imgs/headshot-schneider.jpg')}
 					alt="clayton schneider"
 				/>
