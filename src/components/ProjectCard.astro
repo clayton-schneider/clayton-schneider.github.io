@@ -1,31 +1,32 @@
 ---
 import { Image } from 'astro:assets'
+const txt =
+	'This tool will filter through all the five letter words in the english language and show you your remaining guesses so that you can win Wordle faster.'
 ---
 
 <div class="flex flex-col items-center justify-between gap-10 lg:flex-row-reverse lg:items-start">
 	<div class="max-w-xl text-center lg:text-left">
 		<h3 class="text-3xl font-bold">I Cheat At Wordle</h3><p class="mt-2 text-lg leading-relaxed">
-			This tool will filter through all the five letter words in the english language and show you
-			your remaining guesses so that you can win Wordle faster.
+			Wordle companion app to make finding your next guess easier.
 		</p>
 		<div class="mt-2 flex space-x-2">
 			<a
 				target="_blank"
 				class="inline-block rounded border border-slate-700 bg-slate-700 px-8 py-2 text-white"
 				href="https://icheatatwordle.com"
-				>Live Demo
+				>Demo
 			</a>
 			<a
 				class="inline-block rounded border border-yellow-400 bg-yellow-400 px-8 py-2"
 				href="/projects/icheatatwordle"
-				>My Analysis
+				>Analysis
 			</a>
 		</div>
 	</div>
 	<div>
 		<Image
 			height={500}
-			src={import('~/imgs/projects/icheatatwordle/icheatatwordle.png')}
+			src={import('~/imgs/projects/icheatatwordle/i-cheat-at-wordle.png')}
 			alt="I Cheat At Wordle"
 		/>
 	</div>
