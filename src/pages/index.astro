@@ -1,97 +1,103 @@
 ---
 import CoreLayout from '~/layouts/CoreLayout.astro'
 import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon'
 ---
 
 <CoreLayout>
-	<section class="relative w-full overflow-x-hidden px-edge py-20">
-		<div class="mx-auto flex max-w-screen-xl flex-col justify-between lg:flex-row lg:space-x-10">
-			<div class="relative z-10 mx-auto max-w-2xl text-center lg:mx-0 lg:text-left">
-				<h1 class="text-4xl font-bold">Hi! I'm Clayton, a developer based in Boston.</h1>
-				<div class="mt-5 space-y-2 leading-relaxed">
-					<p>I love building and learning about software.</p>
-					<p>
-						I taught myself to code my junior year of college. While studing manufacturing
-						engineering and business management I realized that my passion has always been to code.
-						More specifically, how can we automate the boring and empower others to do more of what
-						they love?
-					</p>
-					<p>
-						My work experience at Carling Technologies, Slooh, and Simply Sprout has taught me many
-						valuable lessons in front-end and back-end development. Collaborative and hard-working,
-						I am not afraid to ask questions and always look for improvements.
-					</p>
-					<p>I am looking for a new developer position. Looking to hire?</p>
+	<section class="relative w-full px-edge pt-32">
+		<div class="mx-auto max-w-2xl">
+			<div class="flex space-x-5">
+				<div class="relative">
+					<Image
+						class="h-24 w-24 rounded-full object-cover"
+						src={import('~/imgs/headshot-schneider.jpg')}
+						alt="clayton schneider"
+					/>
+					<div
+						class="absolute left-1/2 top-1/2 -z-10 h-[104px] w-[104px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-yellow-400"
+					>
+					</div>
 				</div>
 
-				<div class="mt-4 flex gap-2">
+				<div>
+					<h1 class="text-4xl font-bold">Clayton Schneider</h1>
+					<p class="mt-2">Full-Stack Developer Looking For Work</p>
+				</div>
+			</div>
+			<ul class="mt-5 flex space-x-4">
+				<li class="">
 					<a
-						class="text-primary inline-block rounded border border-slate-700 bg-slate-700 px-8 py-2 text-white"
+						class="flex items-center space-x-1 text-slate-600"
 						href="https://www.linkedin.com/in/clayton-schneider/"
 						target="_blank"
 					>
-						View LinkedIn
+						<Icon name="mdi:linkedin" size={30} />
+						<span class="font-bold">LinkedIn</span>
 					</a>
+				</li>
+				<li class="">
 					<a
-						class="text-primary inline-block rounded border border-slate-700 px-8 py-2"
+						class="flex items-center space-x-1 text-slate-600"
 						href="https://github.com/clayton-schneider"
 						target="_blank"
 					>
-						View Github
+						<Icon name="mdi:github" size={30} />
+						<span class="font-bold">Github</span>
 					</a>
-				</div>
-			</div>
-
-			<div class="relative mx-auto mt-10 lg:mx-0 lg:mt-0">
-				<span class="absolute -bottom-4 -left-10 z-10 block h-20 w-20 rounded-full bg-slate-700"
-				></span>
-				<span
-					class="absolute -bottom-10 -right-72 -z-10 block h-[500px] w-[500px] rounded-full bg-yellow-400"
-				></span>
-
-				<Image
-					class="relative h-full rounded-3xl object-cover"
-					loading="eager"
-					width={600}
-					src={import('~/imgs/headshot-schneider.jpg')}
-					alt="clayton schneider"
-				/>
-			</div>
-		</div>
-	</section>
-
-	<section id="projects" class="px-edge py-10 lg:py-20">
-		<div class="mx-auto max-w-screen-xl">
-			<h2 class="text-center text-4xl font-bold">My Projects</h2>
-
-			<div
-				class="mt-20 flex flex-col items-center justify-between gap-10 lg:flex-row lg:items-start"
-			>
-				<div class="max-w-xl text-center lg:text-left">
-					<h3 class="text-3xl font-bold">I Cheat At Wordle</h3><p
-						class="mt-2 text-lg leading-relaxed"
-					>
-						This tool will filter through all the five letter words in the english language and show
-						you your remaining guesses so that you can win Wordle faster.
-					</p>
-					<div>
-						<a
-							target="_blank"
-							class="text-primary mt-2 inline-block rounded border border-yellow-400 bg-yellow-400 px-8 py-1 font-bold"
-							href="https://icheatatwordle.com"
-							>View App
-						</a>
-						<a href="/projects/icheatatwordle">My Analysis</a>
-					</div>
-				</div>
-				<div>
-					<Image
-						height={500}
-						src={import('~/imgs/projects/icheatatwordle/icheatatwordle.png')}
-						alt="I Cheat At Wordle"
-					/>
-				</div>
+				</li>
+			</ul>
+			<div class="mt-5 space-y-2 leading-relaxed">
+				<p>I love building and learning about software.</p>
+				<p>
+					I taught myself to code my junior year of college. While studing manufacturing engineering
+					and business management I realized that my passion has always been to code. More
+					specifically, how can we automate the boring and empower others to do more of what they
+					love?
+				</p>
+				<p>
+					My work experience at Carling Technologies, Slooh, and Simply Sprout has taught me many
+					valuable lessons in front-end and back-end development. Collaborative and hard-working, I
+					am not afraid to ask questions and always look for improvements.
+				</p>
+				<p>I am looking for a new developer position. Looking to hire?</p>
 			</div>
 		</div>
 	</section>
 </CoreLayout>
+
+<section class="px-edge py-10 lg:py-20">
+	<div class="mx-auto max-w-2xl">
+		<div class="text-center lg:text-left">
+			<h2 class="text-3xl font-bold">My Projects</h2>
+			<p>Here are some projects that I am proud of:</p>
+		</div>
+
+		<div class="mt-20 flex flex-col items-center justify-between gap-10 lg:flex-row lg:items-start">
+			<div class="max-w-xl text-center lg:text-left">
+				<h3 class="text-3xl font-bold">I Cheat At Wordle</h3><p
+					class="mt-2 text-lg leading-relaxed"
+				>
+					This tool will filter through all the five letter words in the english language and show
+					you your remaining guesses so that you can win Wordle faster.
+				</p>
+				<div>
+					<a
+						target="_blank"
+						class="text-primary mt-2 inline-block rounded border border-yellow-400 bg-yellow-400 px-8 py-1 font-bold"
+						href="https://icheatatwordle.com"
+						>View App
+					</a>
+					<a href="/projects/icheatatwordle">My Analysis</a>
+				</div>
+			</div>
+			<div>
+				<Image
+					height={500}
+					src={import('~/imgs/projects/icheatatwordle/icheatatwordle.png')}
+					alt="I Cheat At Wordle"
+				/>
+			</div>
+		</div>
+	</div>
+</section>
