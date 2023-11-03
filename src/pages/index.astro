@@ -2,6 +2,7 @@
 import CoreLayout from '~/layouts/CoreLayout.astro'
 import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon'
+import ProjectCard from '~/components/ProjectCard.astro'
 ---
 
 <CoreLayout>
@@ -66,38 +67,14 @@ import { Icon } from 'astro-icon'
 	</section>
 </CoreLayout>
 
-<section class="px-edge py-10 lg:py-20">
+<section class="px-edge py-10">
 	<div class="mx-auto max-w-2xl">
 		<div class="text-center lg:text-left">
 			<h2 class="text-3xl font-bold">My Projects</h2>
 			<p>Here are some projects that I am proud of:</p>
 		</div>
-
-		<div class="mt-20 flex flex-col items-center justify-between gap-10 lg:flex-row lg:items-start">
-			<div class="max-w-xl text-center lg:text-left">
-				<h3 class="text-3xl font-bold">I Cheat At Wordle</h3><p
-					class="mt-2 text-lg leading-relaxed"
-				>
-					This tool will filter through all the five letter words in the english language and show
-					you your remaining guesses so that you can win Wordle faster.
-				</p>
-				<div>
-					<a
-						target="_blank"
-						class="text-primary mt-2 inline-block rounded border border-yellow-400 bg-yellow-400 px-8 py-1 font-bold"
-						href="https://icheatatwordle.com"
-						>View App
-					</a>
-					<a href="/projects/icheatatwordle">My Analysis</a>
-				</div>
-			</div>
-			<div>
-				<Image
-					height={500}
-					src={import('~/imgs/projects/icheatatwordle/icheatatwordle.png')}
-					alt="I Cheat At Wordle"
-				/>
-			</div>
+		<div class="mt-5">
+			<ProjectCard />
 		</div>
 	</div>
 </section>
