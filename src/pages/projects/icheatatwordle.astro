@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon'
 import { Image } from 'astro:assets'
 import CoreLayout from 'src/layouts/CoreLayout.astro'
+import DarkMode from '~/components/DarkMode.astro'
 ---
 
 <CoreLayout
@@ -80,6 +81,8 @@ import CoreLayout from 'src/layouts/CoreLayout.astro'
 			</nav>
 		</div>
 	</section>
+
+	<DarkMode />
 
 	<section class="my-10 px-4">
 		<div class="mx-auto max-w-2xl">

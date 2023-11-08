@@ -1,0 +1,44 @@
+<div class="mt-2 space-x-2">
+	<button id="dark-mode" class="bg-red-500 px-4 py-2">Toggle Mode</button>
+</div>
+
+<script>
+	document.addEventListener('astro:page-load', () => {
+		const theme = (() => {
+			if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+				return localStorage.getItem('theme')
+			}
+			if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				return 'dark'
+			}
+			return 'light'
+		})()
+
+		if (theme === 'light') {
+			document.documentElement.classList.remove('dark')
+		} else {
+			document.documentElement.classList.add('dark')
+		}
+
+		function handleToggle() {
+			const target = document.documentElement
+			target.classList.toggle('dark')
+			const dark = target.classList.contains('dark')
+
+			localStorage.setItem('theme', dark ? 'dark' : 'light')
+		}
+
+		const toggleDarkBtn = document.querySelector('#dark-mode')
+		toggleDarkBtn!.addEventListener('click', () => {
+			handleToggle()
+		})
+	})
+</script>
+
+<script>
+	document.addEventListener('astro:after-swap', () => {
+		localStorage.theme === 'dark'
+			? document.documentElement.classList.add('dark')
+			: document.documentElement.classList.add('light')
+	})
+</script>
