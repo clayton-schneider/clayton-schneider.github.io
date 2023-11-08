@@ -4,7 +4,13 @@ import { Image } from 'astro:assets'
 import CoreLayout from 'src/layouts/CoreLayout.astro'
 ---
 
-<CoreLayout>
+<CoreLayout
+	seo={{
+		title: 'I Cheat At Wordle Project Review | Clayton Schneider',
+		description:
+			'I Cheat At Wordle is a companion tool that works to help you find remaining moves while playing Wordle.'
+	}}
+>
 	<section class="px-4 pt-32">
 		<div class="mx-auto max-w-2xl">
 			<nav class="flex" aria-label="Breadcrumb">
