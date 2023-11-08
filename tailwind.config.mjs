@@ -16,6 +16,7 @@ const FONT_FAMILY_BASE = [
 
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	darkMode: 'class',
 	theme: {
 		fontFamily: {
 			sans: ['Roboto', ...FONT_FAMILY_BASE]

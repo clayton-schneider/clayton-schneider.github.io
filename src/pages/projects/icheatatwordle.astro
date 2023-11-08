@@ -17,7 +17,10 @@ import CoreLayout from 'src/layouts/CoreLayout.astro'
 				<ol role="list" class="flex items-center space-x-4">
 					<li>
 						<div>
-							<a href="/" class="text-gray-400 hover:text-gray-500">
+							<a
+								href="/"
+								class="text-gray-400 hover:text-gray-500 dark:text-gray-100 dark:hover:text-gray-200"
+							>
 								<svg
 									class="h-5 w-5 flex-shrink-0"
 									viewBox="0 0 20 20"
@@ -36,25 +39,7 @@ import CoreLayout from 'src/layouts/CoreLayout.astro'
 					<li>
 						<div class="flex items-center">
 							<svg
-								class="h-5 w-5 flex-shrink-0 text-gray-400"
-								viewBox="0 0 20 20"
-								fill="currentColor"
-								aria-hidden="true"
-							>
-								<path
-									fill-rule="evenodd"
-									d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-									clip-rule="evenodd"></path>
-							</svg>
-							<a href="#" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
-								>Projects</a
-							>
-						</div>
-					</li>
-					<li>
-						<div class="flex items-center">
-							<svg
-								class="h-5 w-5 flex-shrink-0 text-gray-400"
+								class="h-5 w-5 flex-shrink-0 text-gray-400 dark:text-gray-100 dark:hover:text-gray-200"
 								viewBox="0 0 20 20"
 								fill="currentColor"
 								aria-hidden="true"
@@ -66,7 +51,27 @@ import CoreLayout from 'src/layouts/CoreLayout.astro'
 							</svg>
 							<a
 								href="#"
-								class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
+								class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700 dark:text-gray-100 dark:hover:text-gray-200"
+								>Projects</a
+							>
+						</div>
+					</li>
+					<li>
+						<div class="flex items-center">
+							<svg
+								class="h-5 w-5 flex-shrink-0 text-gray-400 dark:text-gray-100 dark:hover:text-gray-200"
+								viewBox="0 0 20 20"
+								fill="currentColor"
+								aria-hidden="true"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+									clip-rule="evenodd"></path>
+							</svg>
+							<a
+								href="#"
+								class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700 dark:text-gray-100 dark:hover:text-gray-200"
 								aria-current="page">I Cheat At Wordle</a
 							>
 						</div>

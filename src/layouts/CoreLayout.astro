@@ -11,7 +11,7 @@ interface Props {
 const { seo } = Astro.props
 ---
 
-<html lang="en">
+<html lang="en" class="dark">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/png+xml" href="/favicon.png" />
@@ -23,7 +23,7 @@ const { seo } = Astro.props
 		<ViewTransitions />
 		<SEO {...seo} />
 	</head>
-	<body class="relative w-full overflow-x-hidden">
+	<body class="relative w-full overflow-x-hidden dark:bg-neutral-900 dark:text-white/90">
 		<slot />
 	</body>
 </html>
