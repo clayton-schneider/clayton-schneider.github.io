@@ -1,5 +1,0 @@
-Sitemap: https://claytonschneider.dev/sitemap-index.xml
-
-User-agent: *
-Allow: /
-Disallow: /assets/*
