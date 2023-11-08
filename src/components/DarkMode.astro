@@ -2,6 +2,7 @@
 	<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
 		<g
 			id="sun"
+			class="text-black dark:text-transparent"
 			fill="none"
 			stroke="currentColor"
 			stroke-linecap="round"
@@ -13,7 +14,7 @@
 		>
 		<path
 			id="moon"
-			class="text-transparent"
+			class="text-transparent dark:text-white"
 			fill="none"
 			stroke="currentColor"
 			stroke-linecap="round"
@@ -26,14 +27,10 @@
 <script is:inline>
 	if (localStorage.theme === 'dark') {
 		document.documentElement.setAttribute('class', 'dark')
-		document.getElementById('sun').setAttribute('classs', 'text-transparent')
-		document.getElementById('moon').setAttribute('class', '')
 	}
 </script>
 
 <script>
-	const moon = document.getElementById('moon')!
-	const sun = document.getElementById('sun')!
 	const element = document.documentElement!
 
 	function getTheme() {
@@ -50,13 +47,9 @@
 		const theme = getTheme()
 
 		if (theme === 'light') {
-			element.classList.remove('dark')
-			sun.setAttribute('class', '')
-			moon.setAttribute('class', 'text-transparent')
+			element.setAttribute('class', 'dark')
 		} else {
-			element.classList.add('dark')
-			sun.setAttribute('class', 'text-transparent')
-			moon.setAttribute('class', '')
+			element.setAttribute('class', 'dark')
 		}
 
 		window.localStorage.setItem('theme', theme!)
@@ -64,14 +57,6 @@
 		function handleToggle() {
 			element.classList.toggle('dark')
 			const dark = element.classList.contains('dark')
-
-			if (dark) {
-				document.getElementById('sun')!.setAttribute('class', 'text-transparent')
-				document.getElementById('moon')!.setAttribute('class', '')
-			} else {
-				document.getElementById('sun')!.setAttribute('class', '')
-				document.getElementById('moon')!.setAttribute('class', 'text-transparent')
-			}
 
 			localStorage.setItem('theme', dark ? 'dark' : 'light')
 		}
@@ -83,13 +68,9 @@
 <script>
 	document.addEventListener('astro:after-swap', () => {
 		if (localStorage.theme === 'dark') {
-			document.documentElement.classList.add('dark')
-			document.getElementById('sun')!.setAttribute('class', 'text-transparent')
-			document.getElementById('moon')!.setAttribute('class', '')
+			document.documentElement.setAttribute('class', 'dark')
 		} else {
-			document.documentElement.classList.add('light')
-			document.getElementById('sun')!.setAttribute('class', '')
-			document.getElementById('moon')!.setAttribute('class', 'text-transparent')
+			document.documentElement.setAttribute('class', '')
 		}
 	})
 </script>
