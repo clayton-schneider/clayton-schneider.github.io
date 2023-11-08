@@ -16,11 +16,13 @@ export default defineConfig({
 		react(),
 		sitemap(),
 		robotsTxt({
-			policy: {
-				userAgent: '*',
-				allow: '/',
-				disallow: '/assets'
-			}
+			policy: [
+				{
+					userAgent: '*',
+					allow: '/',
+					disallow: '/assets'
+				}
+			]
 		})
 	]
 })
