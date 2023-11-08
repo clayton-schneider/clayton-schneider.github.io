@@ -1,44 +1,87 @@
-<div class="mt-2 space-x-2">
-	<button id="dark-mode" class="bg-red-500 px-4 py-2">Toggle Mode</button>
-</div>
+<button id="dark-mode" aria-label="toggle dark mode">
+	<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+		<g
+			id="sun"
+			fill="none"
+			stroke="currentColor"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="2"
+			><circle cx="12" cy="12" r="4"></circle><path
+				d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+			></path></g
+		>
+		<path
+			id="moon"
+			class="text-transparent"
+			fill="none"
+			stroke="currentColor"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="2"
+			d="M12 3a6 6 0 0 0 9 9a9 9 0 1 1-9-9Z"></path>
+	</svg>
+</button>
 
 <script>
+	const moon = document.getElementById('moon')!
+	const sun = document.getElementById('sun')!
+	const element = document.documentElement!
+
+	function getTheme() {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+			return localStorage.getItem('theme')
+		}
+		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			return 'dark'
+		}
+		return 'light'
+	}
+
 	document.addEventListener('astro:page-load', () => {
-		const theme = (() => {
-			if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-				return localStorage.getItem('theme')
-			}
-			if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-				return 'dark'
-			}
-			return 'light'
-		})()
+		const theme = getTheme()
 
 		if (theme === 'light') {
-			document.documentElement.classList.remove('dark')
+			element.classList.remove('dark')
+			sun.setAttribute('class', '')
+			moon.setAttribute('class', 'text-transparent')
 		} else {
-			document.documentElement.classList.add('dark')
+			element.classList.add('dark')
+			sun.setAttribute('class', 'text-transparent')
+			moon.setAttribute('class', '')
 		}
 
+		window.localStorage.setItem('theme', theme!)
+
 		function handleToggle() {
-			const target = document.documentElement
-			target.classList.toggle('dark')
-			const dark = target.classList.contains('dark')
+			element.classList.toggle('dark')
+			const dark = element.classList.contains('dark')
+
+			if (dark) {
+				document.getElementById('sun')!.setAttribute('class', 'text-transparent')
+				document.getElementById('moon')!.setAttribute('class', '')
+			} else {
+				document.getElementById('sun')!.setAttribute('class', '')
+				document.getElementById('moon')!.setAttribute('class', 'text-transparent')
+			}
 
 			localStorage.setItem('theme', dark ? 'dark' : 'light')
 		}
 
-		const toggleDarkBtn = document.querySelector('#dark-mode')
-		toggleDarkBtn!.addEventListener('click', () => {
-			handleToggle()
-		})
+		document.querySelector('#dark-mode')!.addEventListener('click', handleToggle)
 	})
 </script>
 
 <script>
 	document.addEventListener('astro:after-swap', () => {
-		localStorage.theme === 'dark'
-			? document.documentElement.classList.add('dark')
-			: document.documentElement.classList.add('light')
+		if (localStorage.theme === 'dark') {
+			document.documentElement.classList.add('dark')
+			document.getElementById('sun')!.setAttribute('class', 'text-transparent')
+			document.getElementById('moon')!.setAttribute('class', '')
+		} else {
+			document.documentElement.classList.add('light')
+			document.getElementById('sun')!.setAttribute('class', '')
+			document.getElementById('moon')!.setAttribute('class', 'text-transparent')
+		}
 	})
 </script>
