@@ -1,0 +1,33 @@
+---
+import type { InferGetStaticPropsType } from 'astro'
+import { getCollection } from 'astro:content'
+import CoreLayout from '~/layouts/CoreLayout.astro'
+import formatDate from '~/lib/formatDate'
+
+export async function getStaticPaths() {
+	const blogEntries = await getCollection('blog')
+	return blogEntries.map((entry) => ({
+		params: { slug: entry.slug },
+		props: { entry }
+	}))
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>
+const { entry } = Astro.props
+const { Content } = await entry.render()
+---
+
+<CoreLayout
+	seo={{ title: entry.data.title + 'Clayton Schneider', description: entry.data.description }}
+>
+	<section class="px-4 pt-32">
+		<div class="mx-auto max-w-2xl">
+			<h1 class="text-3xl font-bold">{entry.data.title}</h1>
+			<p>{formatDate(entry.data.date)}</p>
+
+			<div class="prose mt-5">
+				<Content />
+			</div>
+		</div>
+	</section>
+</CoreLayout>
