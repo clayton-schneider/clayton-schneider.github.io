@@ -18,12 +18,12 @@ const { Content } = await entry.render()
 ---
 
 <CoreLayout
-	seo={{ title: entry.data.title + 'Clayton Schneider', description: entry.data.description }}
+	seo={{ title: entry.data.title + ' | Clayton Schneider', description: entry.data.description }}
 >
 	<section class="px-4 pt-32">
 		<div class="mx-auto max-w-2xl">
 			<h1 class="text-3xl font-bold">{entry.data.title}</h1>
-			<p>{formatDate(entry.data.date)}</p>
+			<p class="mt-2">{formatDate(entry.data.date)}</p>
 
 			<div class="prose mt-5">
 				<Content />
