@@ -3,6 +3,7 @@ import type { InferGetStaticPropsType } from 'astro'
 import { getCollection } from 'astro:content'
 import CoreLayout from '~/layouts/CoreLayout.astro'
 import formatDate from '~/lib/formatDate'
+import Breadcrumbs from '~/components/Breadcrumbs.astro'
 
 export async function getStaticPaths() {
 	const blogEntries = await getCollection('blog')
@@ -21,11 +22,19 @@ const { Content } = await entry.render()
 	seo={{ title: entry.data.title + ' | Clayton Schneider', description: entry.data.description }}
 >
 	<section class="px-4 pt-32">
+		<Breadcrumbs
+			links={[
+				{ text: 'Blog', link: '#' },
+				{ text: entry.data.title, link: '#' }
+			]}
+		/>
+	</section>
+	<section class="mt-10 px-4">
 		<div class="mx-auto max-w-2xl">
 			<h1 class="text-3xl font-bold">{entry.data.title}</h1>
 			<p class="mt-2">{formatDate(entry.data.date)}</p>
 
-			<div class="prose mt-5">
+			<div class="prose mt-5 dark:prose-invert">
 				<Content />
 			</div>
 		</div>
