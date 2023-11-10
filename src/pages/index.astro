@@ -4,6 +4,7 @@ import DarkMode from '~/components/DarkMode.astro'
 import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon'
 import ProjectCard from '~/components/ProjectCard.astro'
+import BlogList from '~/components/BlogList.astro'
 ---
 
 <CoreLayout
@@ -79,6 +80,16 @@ import ProjectCard from '~/components/ProjectCard.astro'
 			</div>
 			<div class="mt-5">
 				<ProjectCard />
+			</div>
+		</div>
+	</section>
+
+	<section class="mx-4 py-10">
+		<div class="mx-auto max-w-2xl">
+			<h2 class="text-3xl font-bold">My Writing</h2>
+			<p>Here are some articles I have written:</p>
+			<div class="mt-5">
+				<BlogList />
 			</div>
 		</div>
 	</section>
