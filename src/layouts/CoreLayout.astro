@@ -3,6 +3,7 @@ import { ViewTransitions } from 'astro:transitions'
 import { GoogleFontsOptimizer } from 'astro-google-fonts-optimizer'
 import { SEO } from 'astro-seo'
 import type { Props as PSEO } from 'astro-seo'
+import Footer from '~/components/Footer.astro'
 
 interface Props {
 	seo?: PSEO
@@ -25,5 +26,6 @@ const { seo } = Astro.props
 	</head>
 	<body class="relative w-full overflow-x-hidden dark:bg-neutral-900 dark:text-white/90">
 		<slot />
+		<Footer />
 	</body>
 </html>
