@@ -1,0 +1,150 @@
+{
+  "main": {
+    "id": "d20b59eaf472160c",
+    "type": "split",
+    "children": [
+      {
+        "id": "ae3479327b5b8673",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4ca3038e1ec0a078",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7985136398a23127",
+    "type": "split",
+    "children": [
+      {
+        "id": "cd4a125737acea6b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bfdd990ec6529f51",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "75ac4d87a8cd7b6f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "e56162e649e31d94",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "57931553fabfde51",
+    "type": "split",
+    "children": [
+      {
+        "id": "821c0e741c882e81",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "aafac5dfa2bf845e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "d52d314997d93b7c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b00707bbfe272bc4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "85f3572332ffdea3",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "advent-of-code-2023-using-go.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "bfdd990ec6529f51",
+  "lastOpenFiles": [
+    "advent-of-code-2023-in-go-day-8.md",
+    "[].md",
+    "advent-of-code-2023-using-go.md",
+    "start-a-blog-with-astro.md"
+  ]
+}
