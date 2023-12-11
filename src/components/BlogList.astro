@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content'
 import formatDate from '~/lib/formatDate'
 
-const blogEntries = await getCollection('blog')
+const blogEntries = await getCollection('blog', ({data}) => !data.isDraft)
 ---
 
 <div class="space-y-5">

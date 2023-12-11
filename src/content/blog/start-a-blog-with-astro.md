@@ -2,6 +2,7 @@
 title: Start A Blog With Astro
 description: This is my approach to building a developer blog using Astro.
 date: 2023-11-09
+isDraft: false
 ---
 
 Back in January, Astro 2.0 was released with its new [Content Collections](https://astro.build/blog/astro-2/#automatic-type-safety-for-markdown--mdx). This new feature has made it easy to quickly add a blog to your website. Follow along in this article to see how I add a simple blog to my Astro site using this feature. At the end we will be able to write blog posts in markdown and then statically generate a page for each post.
