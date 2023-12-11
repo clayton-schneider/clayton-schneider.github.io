@@ -5,7 +5,7 @@ import formatDate from '~/lib/formatDate'
 const blogEntries = await getCollection('blog')
 ---
 
-<div>
+<div class="space-y-5">
 	{
 		blogEntries.map((blog) => (
 			<div class="border border-black p-4 transition-all duration-300  hover:bg-neutral-50 dark:border-white dark:hover:bg-neutral-100/10">
