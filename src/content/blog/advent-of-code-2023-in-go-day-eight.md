@@ -1,5 +1,5 @@
 ---
-title: Advent of Code 2023 In Go Day 8
+title: Advent of Code 2023 In Go Day Eight
 description: Today we are going to take a look at how I solved Advent of Code 2023 Day 8 using Go.
 date: 2023-12-08
 isDraft: false

@@ -2,7 +2,7 @@
 title: Creating Servers In Go
 description: FILL THIS IN
 date: 2023-12-11
-isDraft: true
+isDraft: false
 ---
 
 Recently I have fallen in love with programming again. The first time this happened was four years ago when I first started to learn JavaScript. I followed a free Codecademy course, lots of Udemy courses (Colt Steele, ), and eventuallly found some creators on YouTube that I really liked (Traversy Media, Design Course, ). 
