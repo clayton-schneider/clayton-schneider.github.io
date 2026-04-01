@@ -2,7 +2,7 @@
 title: Advent of Code 2023 In Go Day One
 description: In this blog we will take a look at my method for solving the 2023 Day One challenge for advent of code.
 date: 2023-12-01
-isDraft: false
+isDraft: true 
 ---
 Prior to today I had not written any go on my own. I took one course on [Frontend Masters](https://frontendmasters.com/courses/go-basics/) to get me up to speed on how Go works and the mindset I need to adopt.
 
