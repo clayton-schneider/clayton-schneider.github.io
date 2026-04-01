@@ -9,7 +9,7 @@ const blogEntries = await getCollection('blog', ({data}) => !data.isDraft)
 	{
 		blogEntries.map((blog) => (
 			<div class="border border-black p-4 transition-all duration-300  hover:bg-neutral-50 dark:border-white dark:hover:bg-neutral-100/10">
-				<a class="" href={`/blog/${blog.slug}`}>
+				<a class="" href={`/blog/${blog.id}`}>
 					<h3 class="line-clamp-2 text-xl font-bold">{blog.data.title}</h3>
 					<p>{formatDate(blog.data.date)}</p>
 					<p class="mt-3 line-clamp-3 text-lg">{blog.data.description}</p>

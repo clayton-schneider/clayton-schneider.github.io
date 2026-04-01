@@ -1,7 +1,8 @@
 import { defineConfig } from 'astro/config'
-import tailwind from '@astrojs/tailwind'
+import tailwindcss from '@tailwindcss/vite'
 import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
+import icon from 'astro-icon'
 
 import robotsTxt from 'astro-robots-txt'
 
@@ -11,10 +12,13 @@ export default defineConfig({
 		format: 'file'
 	},
 	site: 'https://claytonschneider.dev',
+	vite: {
+		plugins: [tailwindcss()]
+	},
 	integrations: [
-		tailwind(),
 		react(),
 		sitemap(),
+		icon(),
 		robotsTxt({
 			policy: [
 				{
