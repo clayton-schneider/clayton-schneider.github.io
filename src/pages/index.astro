@@ -4,6 +4,7 @@ import DarkMode from '~/components/DarkMode.astro'
 import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
 import ProjectCard from '~/components/ProjectCard.astro'
+import ASCIName from '~/components/ASCIName.astro'
 // import BlogList from '~/components/BlogList.astro'
 ---
 
@@ -16,19 +17,8 @@ import ProjectCard from '~/components/ProjectCard.astro'
 >
 	<section class="relative w-full px-4 pt-32">
 		<div class="mx-auto max-w-2xl">
-			<div class="flex space-x-5">
-				<div class="shrink-0 grow">
-					<Image
-						class="h-24 w-24 rounded-full object-cover ring-[5px] ring-yellow-400"
-						src={import('~/imgs/headshot-schneider.jpg')}
-						alt="clayton schneider"
-					/>
-				</div>
-
-				<div>
-					<h1 class="text-2xl font-bold">Clayton Schneider</h1>
-					<p class="mt-2">Front End Developer Looking For Work</p>
-				</div>
+			<div>
+				<ASCIName />
 			</div>
 			<ul class="mt-5 flex space-x-4">
 				<li class="">
