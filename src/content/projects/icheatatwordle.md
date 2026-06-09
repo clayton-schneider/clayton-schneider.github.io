@@ -9,13 +9,21 @@ sourceUrl: "https://github.com/clayton-schneider/icheatatwordle"
 
 # Rebuilding "I Cheat at Wordle" with Zero Dependencies
 
-I originally built [icheatatwordle.com](https://icheatatwordle.com/) on the T3 stack — Next.js, React,
-tRPC, React Query, Zod, superjson, and Radix UI. It's a solid scaffold, but for a tool that's really just
-"filter a word list in the browser," it felt like a lot of machinery. So I rebuilt the whole thing in plain
-TypeScript with Vite and **zero runtime dependencies**, and measured what actually changed.
+"This is probably overkill..." I thought to myself. Back in October of 2023, 
+when I originally built [icheatatwordle.com](https://icheatatwordle.com/), I had decided
+that I wanted to give the [T3 stack](https://create.t3.gg/) a spin. Consisting of Next.js, React,
+tRPC, React Query, Zod, and Radix UI, I had initially thought that icheatatwordle would consist
+of more frontend - backend communication. Having built the project once,
+it bugged me knowing how much software the application relied on. So, in May of 2026, I rebuilt the whole thing with
+the challenge of using **zero runtime dependencies** (only TypeScript and Vite were used).
 
-The word list itself is byte-for-byte identical between the two versions (118,841 bytes), so it's a controlled
-variable rather than something skewing the numbers.
+## Improvements
+Before I dive into the analysis of the two versions, I would like to point out that, in addition
+to rebuilding the application with zero dependencies, I added more features:
+- Search mode: allowing the user to filter down the list of candidate guesses.
+- Virtual scrolling: rendering and scrolling through all 14,855 words can introduce some *jank*.
+I added virtual scrolling to improve the performance of the word list being updated and rendered.
+- UI overhaul: the UI was reconstructed, using plain CSS, to create a more user-friendly experience.
 
 ## Developer environment
 
@@ -39,7 +47,7 @@ The most honest comparison is total transfer to an interactive page. The Next.js
 (gzipped) JavaScript bundle of framework + app code and then fetches the word dictionary separately; the
 vanilla version sends a single ~47 KB bundle with the dictionary already inlined. Subtract the identical
 dictionary from both and the framework cost is stark: roughly **6 KB of actual app code** versus **111 KB of
-React/Next runtime + app** for the same UI.
+React/Next runtime + app**.
 
 ## Lighthouse (live sites, desktop)
 
@@ -57,20 +65,18 @@ Old version hosted on Netlify, new version on Cloudflare. Measured metrics only:
 | Network requests | 9 | 8 |
 
 LCP and TTI both roughly halved, and total page weight dropped ~3.3×. Total Blocking Time and Cumulative
-Layout Shift were already perfect on the original — the Next.js app wasn't janky, so the win here is payload
+Layout Shift were already perfect on the original. The Next.js app wasn't janky, so the win here is payload
 and load time, not runtime smoothness.
 
 ## Caveats
 
 - The two versions are hosted behind different CDNs (Netlify vs Cloudflare), so a slice of the load-time
   difference is infrastructure, not framework. The payload weight, though, is intrinsic to the code.
-- Install and build times were measured with a warm npm cache on a 16-core machine; Lighthouse was a single
-  desktop run per site.
-- Going dependency-free isn't free: Radix UI had been handing me accessible, ARIA-correct UI primitives for
-  nothing, and hand-rolling them is work I now own.
+- Install and build times were measured with a warm npm cache on a 16-core machine.
 
 ## Takeaway
 
-For a small, client-side tool, the full-framework scaffold cost an order of magnitude more in dependencies,
-build time, and shipped bytes — while the rebuilt version is faster and dramatically simpler to reason about.
-The framework wasn't wrong, it was just far more than this particular problem needed.
+Having built icheatatwordle once before, it was clear that a zero dependency version of the 
+application made more sense. The application itself has a very narrow feature-set, all of
+which can be addressed client-side. I was reminded how capabale vanilla JavaScript/TypeScript
+can be, as I didn't find the rewrite to be overwhelming.
