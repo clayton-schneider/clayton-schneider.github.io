@@ -1,34 +1,46 @@
 ---
 import { Image } from 'astro:assets'
-const txt = ''
+import type { CollectionEntry } from 'astro:content'
+
+interface Props {
+	project: CollectionEntry<'projects'>
+}
+
+const { project } = Astro.props
+
 ---
 
 <div class="flex flex-col items-center justify-between gap-3 lg:flex-row lg:items-start lg:gap-10">
 	<div>
 		<Image
-			transition:name="project-img"
+			transition:name={`project-img-${project.id}`}
 			height={500}
-			src={import('~/imgs/projects/icheatatwordle/i-cheat-at-wordle.png')}
-			alt="I Cheat At Wordle"
+			src={project.data.image}
+			alt={project.data.imageAlt}
 		/>
 	</div>
 	<div class="max-w-xl">
-		<h3 transition:name="project-name" class="text-3xl font-bold">I Cheat At Wordle</h3><p
-			class="mt-2 text-lg leading-relaxed"
-		>
-			Wordle companion app to make finding your next guess easier.
-		</p>
+		<h3 transition:name={`project-name-${project.id}`} class="text-3xl font-bold">
+			{project.data.title}
+		</h3>
+		<p class="mt-2 text-lg leading-relaxed">{project.data.description}</p>
 		<div class="mt-2 flex space-x-2">
-			<a
-				target="_blank"
-				class="inline-block rounded border border-slate-700 bg-slate-700 px-8 py-2 text-white"
-				href="https://icheatatwordle.com"
-				>Demo
-			</a>
+			{
+				project.data.demoUrl && (
+					<a
+						target="_blank"
+						class="inline-block rounded border border-slate-700 bg-slate-700 px-8 py-2 text-white"
+						href={project.data.demoUrl}
+					>
+						Demo
+					</a>
+				)
+			}
 			<a
 				class="inline-block rounded border border-yellow-400 bg-yellow-400 px-8 py-2 text-black"
-				href="/projects/icheatatwordle"
-				>Analysis
+				href={`/projects/${project.id}`}
+			>
+				Analysis
 			</a>
 		</div>
 	</div>

@@ -1,7 +1,10 @@
 ---
+import { getCollection } from 'astro:content'
 import CoreLayout from '~/layouts/CoreLayout.astro'
 import ProjectCard from '~/components/ProjectCard.astro'
 // import BlogList from '~/components/BlogList.astro'
+
+const projects = await getCollection('projects')
 ---
 
 <CoreLayout
@@ -19,8 +22,8 @@ import ProjectCard from '~/components/ProjectCard.astro'
 					<h2 class="text-3xl font-bold">My Projects</h2>
 					<p>Here are some projects that I am proud of:</p>
 				</div>
-				<div class="mt-5">
-					<ProjectCard />
+				<div class="mt-5 space-y-10">
+					{projects.map((project) => <ProjectCard project={project} />)}
 				</div>
 			</div>
 		</section>

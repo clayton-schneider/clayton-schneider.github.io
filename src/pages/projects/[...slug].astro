@@ -1,0 +1,71 @@
+---
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
+import { getCollection, render } from 'astro:content'
+import CoreLayout from 'src/layouts/CoreLayout.astro'
+
+export async function getStaticPaths() {
+	const projects = await getCollection('projects')
+	return projects.map((project) => ({
+		params: { slug: project.id },
+		props: { project }
+	}))
+}
+
+const { project } = Astro.props
+const { Content } = await render(project)
+
+---
+
+<CoreLayout
+	seo={{
+		title: `${project.data.title} Project Review | Clayton Schneider`,
+		description: project.data.description
+	}}
+>
+	<section class="px-4 pt-32 pb-10">
+		<div class="mx-auto max-w-2xl">
+			<Image
+				transition:name={`project-img-${project.id}`}
+				class="w-full object-cover"
+				src={project.data.image}
+				alt={project.data.imageAlt}
+			/>
+			<h1 class="mt-5 text-3xl font-bold" transition:name={`project-name-${project.id}`}>
+				{project.data.title}
+			</h1>
+			<p class="mt-2 text-neutral-200">{project.data.description}</p>
+
+			<div class="mt-5">
+				<ul class="flex space-x-4 text-neutral-100">
+					{
+						project.data.demoUrl && (
+							<li>
+								<a class="flex items-center space-x-1" href={project.data.demoUrl} target="_blank">
+									<Icon name="gg:external" size={30} />
+									<span>Live Demo</span>
+								</a>
+							</li>
+						)
+					}
+					{
+						project.data.sourceUrl && (
+							<li>
+								<a class="flex items-center space-x-1" href={project.data.sourceUrl} target="_blank">
+									<Icon name="mdi:github" size={30} />
+									<span>Source Code</span>
+								</a>
+							</li>
+						)
+					}
+				</ul>
+			</div>
+
+			<article
+				class="prose prose-invert mt-10 max-w-none prose-headings:text-white prose-p:text-neutral-200 prose-a:text-yellow-300 prose-a:underline prose-a:decoration-yellow-300/60 prose-a:underline-offset-4 prose-strong:text-white prose-th:border-neutral-600 prose-th:text-white prose-td:border-neutral-700 prose-td:text-neutral-200 prose-li:text-neutral-200 prose-hr:border-neutral-700"
+			>
+				<Content />
+			</article>
+		</div>
+	</section>
+</CoreLayout>
