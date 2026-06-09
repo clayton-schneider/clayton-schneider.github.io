@@ -1,11 +1,11 @@
 ---
 import NavMenu from './NavMenu'
 const links = [
-	{ linkText: 'Projects', link: '/#projects' },
-	{
-		linkText: 'Resume',
-		link: 'https://docs.google.com/document/d/1NlFSQoNiFW3DBTxuNSXzUws22wgY-efyJcpFK-6xCco/edit?usp=sharing'
-	}
+	// { linkText: 'Projects', link: '/#projects' }
+	// {
+	// 	linkText: 'Resume',
+	// 	link: 'https://docs.google.com/document/d/1NlFSQoNiFW3DBTxuNSXzUws22wgY-efyJcpFK-6xCco/edit?usp=sharing'
+	// }
 ]
 
 interface Props {
@@ -14,9 +14,9 @@ interface Props {
 const { className } = Astro.props
 ---
 
-<header class={(className ? className : '') + ' p-5 relative '}>
-	<div class="mx-auto flex max-w-screen-xl items-center justify-between">
-		<a href="/" class="text-2xl font-bold"> Clayton Schneider</a>
+<header class={(className ? className : '') + ' bg-primary flex flex-col items-center py-4 '}>
+	<div class="mx-auto flex max-w-screen-xl flex-col items-center justify-between gap-3">
+		<h1 class="text-2xl">clayton schneider</h1>
 
 		<NavMenu links={links} client:load />
 	</div>

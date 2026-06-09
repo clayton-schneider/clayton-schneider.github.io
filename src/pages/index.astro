@@ -1,10 +1,6 @@
 ---
 import CoreLayout from '~/layouts/CoreLayout.astro'
-import DarkMode from '~/components/DarkMode.astro'
-import { Image } from 'astro:assets'
-import { Icon } from 'astro-icon/components'
 import ProjectCard from '~/components/ProjectCard.astro'
-import ASCIName from '~/components/ASCIName.astro'
 // import BlogList from '~/components/BlogList.astro'
 ---
 
@@ -15,62 +11,18 @@ import ASCIName from '~/components/ASCIName.astro'
 			'My name is Clayton Schneider and this website serves as my centralized space to show off and share everything that I have built and learned about software devleopment! '
 	}}
 >
-	<section class="relative w-full px-4 pt-4">
-		<div class="mx-auto max-w-2xl">
-			<div>
-				<ASCIName />
+	<section class="relative w-full">
+		<div class="mx-auto max-w-2xl"></div>
+		<section class="px-4 py-10">
+			<div class="mx-auto max-w-2xl">
+				<div>
+					<h2 class="text-3xl font-bold">My Projects</h2>
+					<p>Here are some projects that I am proud of:</p>
+				</div>
+				<div class="mt-5">
+					<ProjectCard />
+				</div>
 			</div>
-			<ul class="mt-5 flex space-x-4">
-				<li class="">
-					<a
-						class="flex items-center space-x-1 text-slate-600 dark:text-white"
-						href="https://www.linkedin.com/in/clayton-schneider/"
-						target="_blank"
-					>
-						<Icon name="mdi:linkedin" size={30} />
-						<span class="font-bold">LinkedIn</span>
-					</a>
-				</li>
-				<li class="">
-					<a
-						class="flex items-center space-x-1 text-slate-600 dark:text-white"
-						href="https://github.com/clayton-schneider"
-						target="_blank"
-					>
-						<Icon name="mdi:github" size={30} />
-						<span class="font-bold">Github</span>
-					</a>
-				</li>
-				<li>
-					<DarkMode />
-				</li>
-			</ul>
-			<div class="mt-5 space-y-2 leading-relaxed">
-				<p>I love building and learning about software.</p>
-				<p>
-					I taught myself to code my junior year of college. While studying manufacturing
-					engineering and business management I realized that my passion has always been to code.
-					More specifically, how can we automate the boring and empower others to do more of what
-					they love?
-				</p>
-				<p>
-					My work experience at Carling Technologies, Slooh, and Simply Sprout has taught me many
-					valuable lessons in front-end and back-end development. Collaborative and hard-working, I
-					am not afraid to ask questions and always look for improvements.
-				</p>
-				<p>I am looking for a new developer position. Looking to hire?</p>
-			</div>
-		</div>
-	</section>
-	<section class="px-4 py-10">
-		<div class="mx-auto max-w-2xl">
-			<div>
-				<h2 class="text-3xl font-bold">My Projects</h2>
-				<p>Here are some projects that I am proud of:</p>
-			</div>
-			<div class="mt-5">
-				<ProjectCard />
-			</div>
-		</div>
+		</section>
 	</section>
 </CoreLayout>
