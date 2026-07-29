@@ -1,0 +1,119 @@
+---
+import { Image } from 'astro:assets'
+import CoreLayout from '~/layouts/CoreLayout.astro'
+import headshot from '~/imgs/clayton-dithered.png'
+---
+
+<CoreLayout
+	seo={{
+		title: 'brag | clayton schneider',
+		description:
+			"clayton schneider's brag page. An opportunity to unabashedly brag about my accomplishments and capabilities."
+	}}
+>
+	<main class="mx-auto max-w-2xl px-4 py-10">
+		<section class="border-primary grid gap-6 border p-4 sm:grid-cols-[1fr_180px] sm:items-start">
+			<div>
+				<h1 class="mt-2 text-4xl font-bold">
+					<a
+						class="text-neutral-300 transition-colors hover:text-primary"
+						href="/"
+						aria-label="Back to homepage"
+						>/</a
+					>brag
+				</h1>
+				<div class="mt-6 space-y-4">
+					<p>
+						This page is inspired by the “slash brag” concept discussed on the Mostly Technical
+						podcast: a page on a personal website that exists as an opportunity to brag.
+					</p>
+					<p>
+						I am not always good at talking about myself or my accomplishments. This page is a place
+						to practice being honest about my work, effort, follow-through, and success.
+					</p>
+				</div>
+			</div>
+
+			<figure class="border border-neutral-700 bg-neutral-950 p-2">
+				<Image
+					src={headshot}
+					alt="Dithered headshot of Clayton Schneider"
+					width="180"
+					class="w-full"
+				/>
+			</figure>
+		</section>
+
+		<section class="mt-10">
+			<h2 class="text-2xl font-bold">Education</h2>
+			<div class="mt-4 space-y-6">
+				<article>
+					<h3 class="text-xl font-bold">Georgia Institute of Technology</h3>
+					<p class="text-sm text-neutral-300">Jan 2024 – May 2026</p>
+					<p>Master of Science in Computer Science, specializing in Computing Systems.</p>
+				</article>
+
+				<article>
+					<h3 class="text-xl font-bold">University of Connecticut</h3>
+					<p class="text-sm text-neutral-300">Aug 2016 – May 2020</p>
+					<p>
+						Bachelor’s degree in Management and Engineering for Manufacturing, a dual degree program
+						from the business and engineering schools.
+					</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="mt-10">
+			<h2 class="text-2xl font-bold">Projects</h2>
+			<div class="mt-4 space-y-6">
+				<article>
+					<h3 class="text-xl font-bold">icheatatwordle</h3>
+					<p>
+						Built and published <a class="text-primary underline" href="https://icheatatwordle.com"
+							>icheatatwordle.com</a
+						>, a Wordle companion app that makes finding the next guess easier.
+					</p>
+					<p class="mt-2">
+						The project has had 32 unique visitors in the past 32 days. I also rebuilt it with zero
+						runtime dependencies and documented the technical tradeoffs in a
+						<a class="text-primary underline" href="/projects/icheatatwordle">project analysis</a>.
+					</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="mt-10">
+			<h2 class="text-2xl font-bold">Life Experiences</h2>
+			<div class="mt-4 space-y-6">
+				<article>
+					<h3 class="text-xl font-bold">30,000-mile road trip</h3>
+					<p class="text-sm text-neutral-300">March 2021 – June 2021</p>
+					<p>
+						Lived in my Chevy Tahoe and drove around the United States, covering roughly 30,000
+						miles and visiting 46 national parks.
+					</p>
+					<p class="mt-2">
+						I plan to turn this into a larger section of the site where I document each national
+						park.
+					</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="mt-10">
+			<h2 class="text-2xl font-bold">More to document</h2>
+			<ul class="mt-4 list-inside list-disc space-y-2">
+				<li>Georgia Tech classes</li>
+				<li>Class projects</li>
+				<li>Personal projects</li>
+				<li>Smaller wins I usually forget to count</li>
+			</ul>
+		</section>
+
+		<section class="mt-10">
+			<h2 class="text-2xl font-bold">Contact</h2>
+			<p class="mt-4">If something here makes you think I could help with something, reach out.</p>
+		</section>
+	</main>
+</CoreLayout>

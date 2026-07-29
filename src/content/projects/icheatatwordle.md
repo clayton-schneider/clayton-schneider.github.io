@@ -78,5 +78,4 @@ and load time, not runtime smoothness.
 
 Having built icheatatwordle once before, it was clear that a zero dependency version of the 
 application made more sense. The application itself has a very narrow feature-set, all of
-which can be addressed client-side. I was reminded how capabale vanilla JavaScript/TypeScript
-can be, as I didn't find the rewrite to be overwhelming.
+which can be addressed client-side.
